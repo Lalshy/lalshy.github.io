@@ -1,0 +1,386 @@
+font-family:brandon-grotesque, sans-serif; 
+	font-size:2em;font-family:brandon-grotesque, sans-serif; 
+	font-size:2em;@charset "utf-8";
+@import url("tablet.css") screen and (min-width:768px) and (max-width:1279px);
+/* CSS Document */
+/*css reset to make things look the same across all browsers*/
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	/*background-color:#eeeceb;*/
+	/*bg color wouldn't work. Only got it to work by adding <style> to the html*/
+	color:pink;
+	width:100%;
+	height:auto;
+}
+
+main {
+	width:1100px;
+	margin:auto;
+	background-color:white;
+}
+
+header {
+	width:100%;
+	height:70px;
+	background-color:white;
+	margin:auto;
+}
+
+nav {
+	width:1100px;
+	height:auto;
+	padding: 25px 0px 0px 25px;
+	margin:auto;
+	background-color:white;
+	position:relative;
+}
+
+.logo {
+	position:absolute;
+	margin:5px;
+	margin-left:40px;
+	box-sizing: border-box;
+	/*background-color:orange;*/
+	z-index:1;
+}
+
+img {
+	object-fit: contain;
+	vertical-align: middle;
+}
+
+/*menu with dropdowns starts here*/
+
+/* I followed a Lynda.com tutorial for CSS dropdown navigation to get the following code. At first I liked how no classes or ids were necessary, and you could target the desired li using arrows or listing the elements. However, this caused major problems when I started work on the footer, and it became confusing trying to remember which element was which when it came time to render it responsive.*/
+
+nav ul {
+	list-style: none;
+	font-family: Montserrat, Raleway, Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	text-transform: uppercase;
+	
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	z-index: 1;
+}
+
+nav ul::after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
+nav ul li:hover {
+	text-decoration: none;
+	color:rgba(209,97,38,1.00);/*not working*/
+ 	/*background-color:rgba(13,114,183,1.00);*/
+}
+
+nav ul li:hover > ul {
+	display:block;
+	
+}
+
+nav ul li a {
+	display:inline-block;
+	color: rgba(105,105,105);
+	padding:10px 20px;
+	width:125px;
+}
+nav ul li a:hover {
+	text-decoration: none;
+	color:rgba(209,97,38,1.00);
+	/*background-color:rgba(48,160,204,1.00);*/
+}
+nav ul ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	background-color:white;
+	/*background-color:rgba(13,114,183,1.00);*/
+}
+
+nav ul ul li:hover {
+	background-color:rgba(48,160,204,1.00);
+}
+
+nav ul ul li a {
+	color:rgba(105,105,105);
+	padding:10px;
+	margin:10px 20px;
+	box-sizing: border-box;
+	width:auto;
+}
+
+nav ul ul li a:hover {
+	color:white;
+	background-color:rgba(48,160,204,1.00);
+	text-decoration: none;
+	width:auto;
+}
+/*top level menu*/
+
+nav > ul {
+	padding-left:125px;
+	box-sizing: border-box;
+}
+
+nav > ul > li {
+    float: left;
+}
+
+nav > ul > li > a {
+	padding:10px 30px 15px 30px;
+	width:auto;
+}
+
+/*hero image, text and buttons*/
+.hero {
+	background-image:url("half-the-sky-image.jpg");
+    height: 650px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+	margin:auto;
+	margin-bottom: 40px;
+	overlay:hidden;
+}
+
+.herotext {
+	width:33%;
+  position: absolute;
+  top: 60%;
+  left:25%;
+ transform: translate(-50%, -50%);
+}
+
+#tagline {
+	font-family:brandon-grotesque, "sans-serif";
+	font-weight:100;
+	font-size: 2em;
+	line-height: 2em;
+	color:white;
+	text-transform: uppercase;
+}
+
+.herobutton {
+	width:160px;
+	height:auto;
+	background-color:#FB8300;
+	float:left;
+	text-align: center;
+	padding:15px;
+	margin:10px;
+	/*to render the buttons parrellograms.*/
+	-webkit-transform:skewX(-20deg);
+	transform: skewX(-20deg);
+}
+
+.buttontext {
+	font-family: "mr-eaves-modern", sans-serif;
+	font-size: 1em;
+	color:white;
+	text-transform: uppercase;
+	/*to stop the text from slanting with the box*/
+	-webkit-transform:skewX(20deg);
+	transform:skewX(20deg);
+	display:inline-block;
+}
+
+.herobutton:hover {
+	outline:6px solid #FB8300;
+	font-size:1.1em;
+	-webkit-transition:0.3s;
+	transition:0.3s;
+}
+
+/*section formatting starts here*/
+
+/*wanted to try flex-box layout alternating text and images,  and found a responsive example on codepen. Most confusing part is knowing which element to add the flex values to, the parent or child.*/
+
+/*Eventually, want to hide paragraphs and have them display as overlays on hover*/
+
+.grid-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  flex-direction: row; 
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+}
+.col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.col-left {
+  -webkit-box-ordinal-group:-1;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+.col-issue-item {
+	height: 20em;
+	display: flex;
+	align-items:center;
+	justify-content:center;	
+}
+
+.issue-text {
+	width:60%;
+}
+ .col-issue-image {
+	background-size:cover;
+	 background-position:center center;
+}
+
+h3 {
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 3em;
+	letter-spacing: 1px;
+	color:rgba(105,105,105);
+	text-align: center;
+}
+
+.advocatesheading h4 {
+	text-align: center;
+	font-family: brandon-grotesque, sans-serif;
+	color:white;
+	font-style: normal;
+	font-weight: bolder;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 6em;
+	background-color:skyblue;
+}
+
+p {
+	font-family: "mr-eaves-modern", sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	text-align: center;
+	color: rgba(105,105,105);
+}
+
+/*video slider starts here*/
+/*don't know why if height is auto, videos are squished. Would eventually like videos displayed on a carousel, and how to reduce loading time.*/
+
+.advocates {
+	width:100%;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	overflow-x:scroll;
+	background-color: white;
+
+}
+
+.flex {
+	flex-shrink: 0;
+	flex-direction: row;
+  width: 25%;
+  height: auto;
+	padding:10px 0px 10px 10px;
+	margin:10px 0px 10px 10px;
+}
+
+/*footer starts here*/
+
+
+footer {
+	width:100%;
+	height:auto;
+	margin:auto;
+	display:inline-block;
+	background-color:black;
+	
+}
+
+#getinvolved {
+	margin:10px;
+	line-height: 2em;
+	float:left;
+	color:white;
+	font-size: 2.24em;
+	font-family: brandon-grotesque, "sans-serif";
+}
+
+#footertext > a {
+	margin:10px;
+	float:left;
+	color:white;
+	font-size: 1em;
+	line-height:4em;
+	font-family: brandon-grotesque, "sans-serif";
+	text-decoration: none;
+}
+
+#footertext > a:hover {
+	color:skyblue;
+	text-decoration: none;
+}
+
+#pointer {
+	color:white;
+	font-size:3.24em;
+	line-height: 1.6em;
+	margin-left:10px;
+}
+
+#pointer:hover {
+	color:skyblue;
+}
+
+.socialmenu {
+	float:right;
+	margin:20px;
+}
+
+.social {
+	display:inline-flex;
+	float:right;
+	background-color:black;
+	list-style-type: none;
+}
+
+.social li a {
+	margin:10px;
+	padding:20px;
+}
+
+.fa {
+	font-size:4em;
+	color:white;
+}
+
+.fa:hover {
+	color:skyblue;
+}
+
+social > li 	{
+	list-style-type: none;
+	padding:20px;
+	margin-top:-75px;
+	box-sizing: border-box;	
+}
+	
+@media screen and (min-width:1280px){
+}

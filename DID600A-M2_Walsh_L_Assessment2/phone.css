@@ -1,0 +1,368 @@
+@charset "utf-8";
+/* CSS Document */
+/*css reset to make things look the same across all browsers*/
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	width:100%;
+	height:auto;
+	background-color:white;
+}
+
+main {
+	width:100%;
+	margin:auto;
+	background-color:white;
+}
+
+header {
+	width:100%;
+	height:70px;
+	background-color:white;
+	margin:auto;
+}
+
+.mainmenu > li {
+	display:none;
+}
+
+nav ul::after {
+	content:'\2630';
+	float:right;
+	display:inline-block;
+	color:gray;
+	font-size:3em;
+	margin-right:15px;
+}
+
+.logo {
+	position:absolute;
+	margin:5px;
+	margin-left:10px;
+	box-sizing: border-box;
+	/*background-color:orange;*/
+	z-index:1;
+}
+
+img {
+	object-fit: contain;
+	vertical-align: middle;
+}
+
+img.sewing, .girlschool {
+	width:100%;
+	height:auto;
+	object-fit: cover;
+	object-position: top;
+	margin:auto;
+	top:0;
+	left:0;
+}
+/*menu with dropdowns starts here*/
+
+/*hero image, text and buttons*/
+.hero {
+	background-image:url("half-the-sky-image.jpg");
+    height:400px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+	margin:auto;
+	width:100%;
+	margin-bottom: 40px;
+	overlay:hidden;
+}
+.herotext {
+  position: absolute;
+  bottom:0;
+  left:50%;
+ transform: translate(-50%, -50%);
+}
+
+#tagline {
+	display:none;
+	font-family:brandon-grotesque, "sans-serif";
+	font-weight:100;
+	font-size: 2em;
+	line-height: 2em;
+	color:white;
+	text-transform: uppercase;
+}
+
+.herobutton {
+	width:160px;
+	height:auto;
+	background-color:#FB8300;
+	overflow:visible;
+	text-align: center;
+	padding:15px;
+	margin:20px;
+}
+
+.buttontext {
+	font-family: "mr-eaves-modern", sans-serif;
+	font-size: 1em;
+	color:white;
+	text-transform: uppercase;
+	display:inline-block;
+}
+
+.herobutton:hover {
+	background-color:#FF7200;
+	outline:6px solid #FF7200;
+
+	font-size:1.1em;
+	-webkit-transition:0.3s;
+	transition:0.3s;
+}
+
+/*Lightbox modification begin here*/
+
+.lb-div {
+	width:80%;
+	height: auto;
+	margin:auto;
+	text-align:center;
+}
+
+.example-image {
+		margin:10px 10px;
+		border-radius: 3px;
+  		border: 4px solid transparent;
+		box-sizing: border-box;
+		opacity:0.6;
+		transition:0.3s;
+}
+
+.example-image:hover {
+	  	border-radius: 3px;
+  		border: 4px solid skyblue;
+		box-sizing: border-box;
+		background-color:cadetblue 0.3;
+		opacity:1;
+		transition:0.3s;	
+}
+/*End of Lightbox modifications */
+/*section formatting starts here*/
+
+  .grid-flex {
+    height:auto;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    flex-direction: column; 
+	  align-items: center;
+	  flex-wrap: wrap;
+   }
+
+  .col {
+    order:vertical;
+  }
+
+.col-left {
+    -webkit-box-ordinal-group:0;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+	
+  }
+
+.col-issue-item div p {
+	padding:1em;
+	overlay:hidden;
+}
+
+.col-issue-image {
+	padding:1em;
+	height:250px;
+	width:100%;
+	background-size: cover;
+  	background-position: center;
+  	background-repeat: no-repeat;
+}
+
+.issue-text {
+	margin:auto;
+    width: 80%;
+	padding:20px 0px;
+  }
+
+h2, h3 {
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	letter-spacing: 1px;
+	color:rgba(105,105,105);
+	text-align: center;
+}
+
+#smartline {
+	line-height: 1.2em;
+	padding:15px 0px;
+}
+
+.advocatesheading h4 {
+	text-align: center;
+	font-family: brandon-grotesque, sans-serif;
+	color:white;
+	font-style: normal;
+	font-weight: bolder;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 6em;
+	background-color:skyblue;
+}
+
+h5 {
+	font-family: brandon-grotesque, sans-serif;
+	font-size:1.2em;
+	font-style:100;
+	text-transform: uppercase;
+}
+
+p {
+	font-family: "mr-eaves-modern", sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	text-align: left;
+	color: rgba(105,105,105);
+}
+
+.empowerment, .smartgirls {
+	margin:auto;
+	padding:20px;
+	width:80%;
+}
+
+.additional-info ul li {
+	list-style: none;
+}
+
+.additional-info ul li a {
+	text-decoration: none;
+	color: white;
+	font-family: "mr-eaves-modern", sans-serif;
+	font-size:1em;
+	font-style:100;
+	line-height: 2em;
+}
+
+.additional-info {
+	background-color:skyblue;
+	padding:20px;
+	margin:auto;
+	color:white;
+}
+
+/*video slider starts here*/
+
+.advocates {
+	width:100%;
+	height:200px;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+	overflow-x:scroll;
+	background-color: white;
+	margin-bottom: 20px;
+
+}
+
+.flex {
+	flex-shrink: 0;
+	flex-direction: row;
+  width: 100%;
+  height: auto;
+	padding:10px 0px 10px 0px;
+	margin:0;
+}
+
+footer {
+	width:100%;
+	height:auto;
+	margin:auto;
+	display:block;
+	background-color:black;
+	bottom:0;
+}
+
+#getinvolved {
+	margin:10px;
+	line-height: 2em;
+	color:white;
+	font-size: 2.24em;
+	font-family: brandon-grotesque, "sans-serif";
+	text-align: center;
+}
+
+#footertext {
+	margin:10px;
+	text-align:center;
+}
+
+#footertext a {
+	color:white;
+	font-size: 1.2em;
+	line-height:4em;
+	font-family: brandon-grotesque, "sans-serif";
+	text-decoration: none;
+}
+
+#footertext a:hover {
+	color:skyblue;
+}
+
+#pointer {
+	display:none;
+	color:white;
+	font-size:3.24em;
+	line-height: 1.6em;
+	margin-left:10px;
+}
+
+#pointer:hover {
+	color:skyblue;
+	display:none;
+}
+
+.socialmenu {
+	margin:auto;
+}
+
+ul.social {
+	display:flex;
+  justify-content:center;
+	margin:auto;
+	padding-bottom:30px;
+	background-color:black;
+	list-style-type: none;
+}
+
+.social li a {
+	margin:10px;
+	padding:20px;
+}
+
+.fa {
+	font-size:3em;
+	color:white;
+}
+
+.fa:hover {
+	color:skyblue;
+}
+
+social > li 	{
+	list-style-type: none;
+	padding:20px;
+	margin-top:-75px;
+	box-sizing: border-box;	
+}
+	
