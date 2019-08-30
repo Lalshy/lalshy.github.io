@@ -1,4 +1,6 @@
 @charset "utf-8";
+@media (min-width: 320px) and (max-width: 480px) {
+  
 /* CSS Document */
 /*css reset to make things look the same across all browsers*/
 * {
